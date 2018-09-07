@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace Registro_Biblia.DAL
 {
-   public class Contexto
+   public class Contexto : DbContext
     {
         public DbSet<Libro> Libro { get; set; }
 
         public Contexto() : base("Constr") { }
-
     }
 }
