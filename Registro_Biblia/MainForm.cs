@@ -1,4 +1,6 @@
 ﻿using System;
+using Registro_Biblia.UI.Consultas;
+using Registro_Biblia.UI.Registros;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,26 @@ namespace Registro_Biblia
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void registroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Registro registro = new Registro();
+            registro.MdiParent = this;
+            registro.Show();
+            
+        }
+
+        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consulta consulta = new Consulta();
+            consulta.MdiParent = this;
+            consulta.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            registroToolStripMenuItem1_Click(sender, e);
         }
     }
 }
