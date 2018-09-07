@@ -56,7 +56,7 @@ namespace Registro_Biblia.UI.Registros
             Libro libro;
             bool paso = false;
 
-            /* if (!Validar())
+            /*if (!Validar())
              return;*/
 
            libro = Llenaclase();
@@ -89,6 +89,7 @@ namespace Registro_Biblia.UI.Registros
             DescripciontextBox.Text = new Libro().Descripcion;
             SiglasTextBox.Text = new Libro().Siglas;
             TiponumericUpDown.Value = new Libro().TipoId;
+            FechadateTimePicker.Value = libro.Fecha; 
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
