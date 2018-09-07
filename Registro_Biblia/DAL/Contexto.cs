@@ -1,17 +1,18 @@
-﻿using System;
+﻿using Registro_Biblia.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using Registro_Biblia.Entidades;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Registro_Biblia.DAL.Scripts
+namespace Registro_Biblia.DAL
 {
-    public class Contexto
+   public class Contexto
     {
-        public DbSet<Libro> Personas { get; set; }
+        public DbSet<Libro> Libro { get; set; }
 
         public Contexto() : base("Constr") { }
+
     }
 }
