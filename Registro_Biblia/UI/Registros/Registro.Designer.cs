@@ -35,15 +35,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SiglasTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TiponumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TiponumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,12 +100,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Siglas";
             // 
-            // textBox1
+            // SiglasTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 6;
+            this.SiglasTextBox.Location = new System.Drawing.Point(82, 129);
+            this.SiglasTextBox.Name = "SiglasTextBox";
+            this.SiglasTextBox.Size = new System.Drawing.Size(145, 20);
+            this.SiglasTextBox.TabIndex = 6;
             // 
             // label4
             // 
@@ -114,13 +115,6 @@
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Tipo";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(82, 173);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 20);
-            this.textBox2.TabIndex = 8;
             // 
             // Nuevobutton
             // 
@@ -167,19 +161,26 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // TiponumericUpDown
+            // 
+            this.TiponumericUpDown.Location = new System.Drawing.Point(82, 173);
+            this.TiponumericUpDown.Name = "TiponumericUpDown";
+            this.TiponumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.TiponumericUpDown.TabIndex = 13;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(349, 289);
+            this.Controls.Add(this.TiponumericUpDown);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SiglasTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DescripciontextBox);
             this.Controls.Add(this.label2);
@@ -191,6 +192,7 @@
             this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TiponumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,12 +206,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox DescripciontextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SiglasTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NumericUpDown TiponumericUpDown;
     }
 }
