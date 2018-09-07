@@ -14,6 +14,7 @@ namespace Registro_Biblia.Entidades
         public string Descripcion { get; set; }
         public string Siglas { get; set; }
         public int TipoId { get; set; }
+        public DateTime Fecha  { get; set; }
 
 
         public Libro()
@@ -23,6 +24,7 @@ namespace Registro_Biblia.Entidades
             Siglas = string.Empty;
             Siglas = string.Empty;
             TipoId = 0;
+            Fecha = DateTime.Now;
         }
     }
 }

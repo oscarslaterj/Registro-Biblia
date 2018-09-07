@@ -42,6 +42,8 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TiponumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label = new System.Windows.Forms.Label();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TiponumericUpDown)).BeginInit();
@@ -120,7 +122,7 @@
             // 
             this.Nuevobutton.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
-            this.Nuevobutton.Location = new System.Drawing.Point(12, 227);
+            this.Nuevobutton.Location = new System.Drawing.Point(12, 240);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(93, 57);
             this.Nuevobutton.TabIndex = 9;
@@ -132,7 +134,7 @@
             // 
             this.Guardarbutton.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
-            this.Guardarbutton.Location = new System.Drawing.Point(125, 227);
+            this.Guardarbutton.Location = new System.Drawing.Point(125, 240);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(102, 57);
             this.Guardarbutton.TabIndex = 10;
@@ -144,7 +146,7 @@
             // 
             this.Eliminarbutton.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
-            this.Eliminarbutton.Location = new System.Drawing.Point(247, 227);
+            this.Eliminarbutton.Location = new System.Drawing.Point(249, 240);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(100, 57);
             this.Eliminarbutton.TabIndex = 11;
@@ -168,12 +170,32 @@
             this.TiponumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.TiponumericUpDown.TabIndex = 13;
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(22, 207);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(37, 13);
+            this.label.TabIndex = 14;
+            this.label.Text = "Fecha";
+            // 
+            // FechadateTimePicker
+            // 
+            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(82, 207);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(120, 20);
+            this.FechadateTimePicker.TabIndex = 15;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(349, 289);
+            this.ClientSize = new System.Drawing.Size(350, 300);
+            this.Controls.Add(this.FechadateTimePicker);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.TiponumericUpDown);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Eliminarbutton);
@@ -213,5 +235,7 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown TiponumericUpDown;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
     }
 }
