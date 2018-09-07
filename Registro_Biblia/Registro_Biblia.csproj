@@ -109,11 +109,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts\Scripts.sql" />
+    <Content Include="Resources\add-new-page.png" />
+    <Content Include="Resources\file.png" />
+    <Content Include="Resources\folder.png" />
+    <Content Include="Resources\icons8-santa-biblia-50.png" />
+    <Content Include="Resources\magnifier.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
