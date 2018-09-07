@@ -175,15 +175,15 @@
             this.label.AutoSize = true;
             this.label.Location = new System.Drawing.Point(22, 207);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(37, 13);
+            this.label.Size = new System.Drawing.Size(96, 13);
             this.label.TabIndex = 14;
-            this.label.Text = "Fecha";
+            this.label.Text = "Fecha de creacion";
             // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(82, 207);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(125, 207);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(120, 20);
             this.FechadateTimePicker.TabIndex = 15;

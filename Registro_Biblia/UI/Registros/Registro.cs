@@ -25,6 +25,7 @@ namespace Registro_Biblia.UI.Registros
             DescripciontextBox.Text = string.Empty;
             SiglasTextBox.Text = string.Empty;
             TiponumericUpDown.Text = string.Empty;
+            FechadateTimePicker.Value = DateTime.Now;
         }
 
 
@@ -46,6 +47,7 @@ namespace Registro_Biblia.UI.Registros
             libro.Descripcion = string.Empty;
             libro.Siglas = string.Empty;
             libro.TipoId = Convert.ToInt32(TiponumericUpDown.Value);
+            libro.Fecha = FechadateTimePicker.Value;
             return libro;
         }
 
