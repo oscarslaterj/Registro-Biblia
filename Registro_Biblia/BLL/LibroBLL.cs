@@ -36,16 +36,13 @@ namespace Registro_Biblia.BLL
         public static bool Modificar(Libro libro)
         {
             bool paso = false;
-            Contexto contexto = new Contexto();
+            Contexto db = new Contexto();
 
             try
             {
-                contexto.Entry(libro).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
-                contexto.Dispose();
+                db.Entry(libro).State = System.Data.Entity.EntityState.Modified;
+                paso = (db.SaveChanges() > 0);
+                db.Dispose();
             }
             catch (Exception)
             {

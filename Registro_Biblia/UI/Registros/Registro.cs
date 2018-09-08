@@ -28,12 +28,6 @@ namespace Registro_Biblia.UI.Registros
             FechadateTimePicker.Value = DateTime.Now;
         }
 
-
-        private void Nuevobutton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
         private bool ExisteEnLaBaseDeDatos()
         {
             Libro persona = LibroBLL.Buscar((int)IDnumericUpDown.Value);
@@ -51,36 +45,6 @@ namespace Registro_Biblia.UI.Registros
             return libro;
         }
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
-        {
-            Libro libro;
-            bool paso = false;
-
-            /*if (!Validar())
-             return;*/
-
-           libro = Llenaclase();
-
-            if (IDnumericUpDown.Value == 0)
-                paso = LibroBLL.Guardar(libro);
-            else
-            {
-                if (!ExisteEnLaBaseDeDatos())
-                {
-                    MessageBox.Show("No se puede modificar un libro que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                paso = LibroBLL.Modificar(libro);
-
-            }
-            Limpiar();
-
-            if (paso)
-
-                MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("No se puedo guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
 
         private void LlenaCampo(Libro libro)
         {
@@ -89,11 +53,40 @@ namespace Registro_Biblia.UI.Registros
             DescripciontextBox.Text = new Libro().Descripcion;
             SiglasTextBox.Text = new Libro().Siglas;
             TiponumericUpDown.Value = new Libro().TipoId;
-            FechadateTimePicker.Value = libro.Fecha; 
+            FechadateTimePicker.Value = libro.Fecha;
         }
 
-        private void Buscarbutton_Click(object sender, EventArgs e)
+        private bool GuardarValidar()
         {
+            bool paso = true;
+
+            if (DescripciontextBox.Text == string.Empty || SiglasTextBox.Text == string.Empty)
+            {
+                if (DescripciontextBox.Text == string.Empty)
+                {
+                    SupererrorProvider.SetError(DescripciontextBox, "No puede dejar este campo vacio");
+                    DescripciontextBox.Focus();
+                }
+                if (SiglasTextBox.Text == string.Empty)
+                {
+                    SupererrorProvider.SetError(SiglasTextBox, "No puede dejar este campo vacio");
+                    SiglasTextBox.Focus();
+                }
+
+                paso = false;
+            }
+
+            return paso;
+        }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Buscarbutton_Click_1(object sender, EventArgs e)
+        {
+            SupererrorProvider.Clear();
             int id;
             Libro libro = new Libro();
             int.TryParse(IDnumericUpDown.Text, out id);
@@ -111,21 +104,55 @@ namespace Registro_Biblia.UI.Registros
             }
         }
 
-        private void Eliminarbutton_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click_1(object sender, EventArgs e)
         {
-            int id;
-            int.TryParse(IDnumericUpDown.Text, out id);
-
-            if (LibroBLL.Eliminar(id))
-                MessageBox.Show("Eliminado");
-            else
-                ErrorProvider.Equals(IDnumericUpDown, "No se puede eliminar un libro que no existe");
+            Limpiar();
         }
 
-
-        private void Registro_Load(object sender, EventArgs e)
+        private void Guardarbutton_Click_1(object sender, EventArgs e)
         {
+            SupererrorProvider.Clear();
+            int id;
+            int.TryParse(IDnumericUpDown.Text, out id);
+            Libro Libro = LibroBLL.Buscar(id);
+            Libro libro = Llenaclase();
+
+            if (libro == null)
+            {
+                if (GuardarValidar())
+                {
+                    if (LibroBLL.Guardar(libro))
+                        MessageBox.Show("Libro guardado");
+                    else
+                        MessageBox.Show("Libro no guardado");
+                }
+            }
+            else
+            {
+                if (GuardarValidar())
+                {
+                    if (LibroBLL.Modificar(libro))
+                        MessageBox.Show("Persona modificada");
+                    else
+                        MessageBox.Show("Persona no modificada");
+                }
+
+            }
+        }
+
+            private void Eliminarbutton_Click_1(object sender, EventArgs e)
+            {
+            SupererrorProvider.Clear();
+            int id;
+                int.TryParse(IDnumericUpDown.Text, out id);
+
+                if (LibroBLL.Eliminar(id))
+                    MessageBox.Show("Eliminado");
+                else
+                    SupererrorProvider.SetError(IDnumericUpDown, "No se puede eliminar un libro que no existe");
+            }
+
 
         }
     }
-}
+

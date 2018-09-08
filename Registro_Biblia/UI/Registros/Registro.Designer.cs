@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.label1 = new System.Windows.Forms.Label();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -44,9 +45,11 @@
             this.TiponumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.SupererrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TiponumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupererrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -76,6 +79,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Buscarbutton.UseVisualStyleBackColor = false;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click_1);
             // 
             // label2
             // 
@@ -129,6 +133,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Nuevobutton.UseVisualStyleBackColor = false;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click_1);
             // 
             // Guardarbutton
             // 
@@ -141,6 +146,7 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click_1);
             // 
             // Eliminarbutton
             // 
@@ -153,6 +159,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Eliminarbutton.UseVisualStyleBackColor = false;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click_1);
             // 
             // pictureBox1
             // 
@@ -188,6 +195,10 @@
             this.FechadateTimePicker.Size = new System.Drawing.Size(120, 20);
             this.FechadateTimePicker.TabIndex = 15;
             // 
+            // SupererrorProvider
+            // 
+            this.SupererrorProvider.ContainerControl = this;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +226,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TiponumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupererrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +249,6 @@
         private System.Windows.Forms.NumericUpDown TiponumericUpDown;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.ErrorProvider SupererrorProvider;
     }
 }

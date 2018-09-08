@@ -57,6 +57,7 @@
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(121, 21);
             this.FiltrocomboBox.TabIndex = 1;
+            this.FiltrocomboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrocomboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -126,6 +127,7 @@
             this.Consultabutton.TabIndex = 9;
             this.Consultabutton.Text = "Consulta";
             this.Consultabutton.UseVisualStyleBackColor = true;
+            this.Consultabutton.Click += new System.EventHandler(this.Consultabutton_Click_1);
             // 
             // Consulta
             // 

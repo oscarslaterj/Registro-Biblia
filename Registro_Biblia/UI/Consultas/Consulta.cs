@@ -19,7 +19,12 @@ namespace Registro_Biblia.UI.Consultas
             InitializeComponent();
         }
 
-        private void Consultabutton_Click(object sender, EventArgs e)
+        private void FiltrocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Consultabutton_Click_1(object sender, EventArgs e)
         {
             var Listado = new List<Libro>();
             LibroBLL persona = new LibroBLL();
@@ -45,7 +50,7 @@ namespace Registro_Biblia.UI.Consultas
                         int TipoID = Convert.ToInt32(CriteriotextBox.Text);
                         Listado = LibroBLL.GetList(p => p.TipoId == TipoID);
                         break;
-                    
+
                 }
                 Listado = Listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha <= HastadateTimePicker.Value.Date).ToList();
             }
